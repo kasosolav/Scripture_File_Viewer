@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scripture File Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Scripture File Viewer</h1>
+    </header>
+    
+    <div class="toolbar">
+      <div class="toolbar-section">
+        <label>Add Files</label>
+        <div class="file-controls">
+          <input type="file" id="fileInput" accept=".sfm,.usx,.xml" multiple>
+          <button id="addPanelBtn">Add Empty Panel</button>
+        </div>
+      </div>
+      
+      <div class="toolbar-section">
+        <label>Text Direction</label>
+        <select id="textDirection">
+          <option value="ltr">Left to Right</option>
+          <option value="rtl">Right to Left</option>
+        </select>
+      </div>
+      
+      <div class="toolbar-section">
+        <label>Font</label>
+        <select id="fontSelector">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="'Times New Roman', serif">Times New Roman</option>
+          <option value="'Courier New', monospace">Courier New</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="Verdana, sans-serif">Verdana</option>
+          <option value="'SBL Hebrew', serif">SBL Hebrew</option>
+          <option value="'Noto Sans', sans-serif">Noto Sans</option>
+        </select>
+        <button id="addFontBtn">Add Custom Font</button>
+      </div>
+      
+      <div class="toolbar-section">
+        <label>Font Size</label>
+        <select id="fontSize">
+          <option value="12px">12px</option>
+          <option value="14px" selected>14px</option>
+          <option value="16px">16px</option>
+          <option value="18px">18px</option>
+          <option value="20px">20px</option>
+          <option value="24px">24px</option>
+        </select>
+      </div>
+      
+      <div class="toolbar-section">
+        <label>Text Color</label>
+        <input type="color" id="textColor" value="#2d3748">
+      </div>
+      
+      <div class="toolbar-section">
+        <label>Background Color</label>
+        <input type="color" id="bgColor" value="#ffffff">
+      </div>
+    </div>
+    
+    <div class="panels-container" id="panelsContainer">
+      <!-- Panels will be added here -->
+    </div>
+  </div>
+  
+  <div class="custom-font-modal" id="customFontModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add Custom Font</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <div class="form-group">
+        <label for="fontName">Font Name</label>
+        <input type="text" id="fontName" placeholder="e.g., My Custom Font">
+      </div>
+      <div class="form-group">
+        <label for="fontFile">Font File (optional)</label>
+        <input type="file" id="fontFile" accept=".ttf,.otf,.woff,.woff2">
+      </div>
+      <div class="form-group">
+        <label for="fontUrl">OR Font URL</label>
+        <input type="text" id="fontUrl" placeholder="e.g., https://fonts.googleapis.com/css2?family=...">
+      </div>
+      <button class="btn-primary" id="saveFontBtn">Add Font</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
